@@ -48,7 +48,6 @@ pip install -r requirements.txt
 #### Running the Application
 
 ```bash
-cd src
 python manage.py runserver
 ```
 
