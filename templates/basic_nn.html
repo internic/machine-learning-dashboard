@@ -1,0 +1,129 @@
+{% extends '_partials/base.html' %} 
+{% block content %} {% load static %} 
+{% load media_tags %}
+
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+
+<!-- [ Sidebar Menu ] start -->
+{% include '_partials/sidebar.html'%}
+<!-- [ Sidebar Menu ] end -->
+
+<!-- [ Header Topbar ] start -->
+{% include '_partials/header.html'%}
+<!-- [ Header ] end -->
+
+<!-- [ Main Content ] start -->
+<div class="pc-container">
+  <div class="pc-content">
+    <!-- [ breadcrumb ] start -->
+    <div class="page-header">
+      <div class="page-block">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <ul class="breadcrumb">
+              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+
+              <li class="breadcrumb-item" aria-current="page">
+                Neural Networks
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="mb-0">Basic Neural Network</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [ breadcrumb ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="row">
+      <!-- [ sample-page ] start -->
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Background</h5>
+          </div>
+          <div class="card-body">
+            <p>
+              The term "Artificial Neural Network" is derived from Biological
+              neural networks that develop the structure of a human brain.
+              Similar to the human brain that has neurons interconnected to one
+              another, artificial neural networks also have neurons that are
+              interconnected to one another in various layers of the networks.
+              These neurons are known as nodes.
+            </p>
+
+            <p>
+              An Artificial Neural Network in the field of Artificial
+              intelligence where it attempts to mimic the network of neurons
+              makes up a human brain so that computers will have an option to
+              understand things and make decisions in a human-like manner. The
+              artificial neural network is designed by programming computers to
+              behave simply like interconnected brain cells.
+            </p>
+
+            <p>
+              Neural Networks processes information in a similar way the human
+              brain does, and these networks actually learn from examples, you
+              cannot program them to perform a specific task. They will learn
+              only from past experiences as well as examples, which is why you
+              don't need to provide all the information regarding any specific
+              task. So, that was the main reason why neural networks came into
+              existence.
+            </p>
+
+            <p>
+              Neural networks are modeled in accordance with the human brain so
+              as to imitate their functionality. The human brain can be defined
+              as a neural network that is made up of several neurons, so is the
+              Artificial Neural Network is made of numerous perceptron.
+            </p>
+
+            <img
+              src="{% media 'images/pages/keras-artificial-neural-networks.png' %}"
+              alt="neural network structure"
+            />
+
+            <p>
+              A neural network comprises of three main layers, which are as
+              follows;
+            </p>
+
+            <ul>
+              <li>
+                <b>Input layer: </b>The input layer accepts all the inputs that
+                are provided by the programmer.
+              </li>
+              <li>
+                <b>Hidden layer: </b>In between the input and output layer,
+                there is a set of hidden layers on which computations are
+                performed that further results in the output.
+              </li>
+              <li>
+                <b>Output layer: </b>After the input layer undergoes a series of
+                transformations while passing through the hidden layer, it
+                results in output that is delivered by the output layer.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- [ sample-page ] end -->
+    </div>
+    <!-- [ Main Content ] end -->
+  </div>
+</div>
+<!-- [ Main Content ] end -->
+
+{% include '_partials/footer.html'%} {% endblock content %}

@@ -1,0 +1,116 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Cross Validation</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">K-Fold Cross Validation</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Background</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              This process of deciding whether the numerical results quantifying hypothesized relationships between variables, are acceptable as descriptions of the data, is known as validation. 
+                            </p>
+
+                            <p>
+                              Generally, an error estimation for the model is made after training, better known as evaluation of residuals. In this process, a numerical estimate of the difference in predicted and original responses is done, also called the training error. 
+                            </p>
+
+                            <p>
+                              However, this only gives us an idea about how well our model does on data used to train it. Now its possible that the model is underfitting or overfitting the data. So, the problem with this evaluation technique is that it does not give an indication of how well the learner will generalize to an independent/ unseen data set.
+                            </p>
+
+                            <p>
+                              Getting this idea about our model is known as Cross Validation.
+                            </p>
+
+                            <p>
+                              Cross-validation is a technique for evaluating ML models by training several ML models on subsets of the available input data and evaluating them on the complementary subset of the data. 
+                            </p>
+
+                            <h5>K-Fold Cross Validation</h5>
+
+                            <p>
+                              As there is never enough data to train your model, removing a part of it for validation poses a problem of underfitting. By reducing the training data, we risk losing important patterns/ trends in data set, which in turn increases error induced by bias. So, what we require is a method that provides ample data for training the model and also leaves ample data for validation. K Fold cross validation does exactly that.
+                            </p>
+
+                            <p>
+                              In K Fold cross validation, the data is divided into k subsets. Now the holdout method is repeated k times, such that each time, one of the k subsets is used as the test set/ validation set and the other k-1 subsets are put together to form a training set.
+                            </p>
+
+                            <p>
+                              The error estimation is averaged over all k trials to get total effectiveness of our model. As can be seen, every data point gets to be in a validation set exactly once, and gets to be in a training set k-1 times. 
+                            </p>
+
+                            <p>
+                              This significantly reduces bias as we are using most of the data for fitting, and also significantly reduces variance as most of the data is also being used in validation set. 
+                            </p>
+
+                            <p>
+                              Interchanging the training and test sets also adds to the effectiveness of this method. As a general rule and empirical evidence, K = 5 or 10 is generally preferred, but nothing’s fixed and it can take any value.
+                            </p>
+
+
+
+
+
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+{% endblock content %}

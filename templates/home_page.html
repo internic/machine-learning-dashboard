@@ -1,0 +1,207 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+      
+          <!-- [ Main Content ] start -->
+          <div class="pc-container">
+            <div class="pc-content">
+              <!-- [ breadcrumb ] start -->
+              <div class="page-header">
+                <div class="page-block">
+                  <div class="row align-items-center">
+                    <div class="col-md-12">
+                      <ul class="breadcrumb">
+                        <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                        
+                        <li class="breadcrumb-item" aria-current="page">Linear Regression</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-12 ">
+                      <div class="page-header-title">
+                        <h2 class="mb-0">Simple Linear Regression</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- [ breadcrumb ] end -->
+      
+      
+              <!-- [ Main Content ] start -->
+              <div class="row">
+                <!-- [ sample-page ] start -->
+                <div class="col-sm-12 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Background</h5>
+                    </div>
+                    <div class="card-body">
+                      <p
+                        >
+                        Simple Linear Regression is a type of Regression algorithms that models the relationship between a dependent variable and a single independent variable. The relationship shown by a Simple Linear Regression model is linear or a sloped straight line, hence it is called Simple Linear Regression.
+                      </p>
+
+                      <p>
+                        The key point in Simple Linear Regression is that the dependent variable must be a continuous/real value. However, the independent variable can be measured on continuous or categorical values.
+                      </p>
+
+                      <div>
+                        \[
+                        y = \beta_0 + \beta_1 x + \epsilon
+                        \]
+
+                      </div>
+
+                      <ul>
+                        <li>\( \beta_0 = \) It is the intercept of the Regression line (can be obtained putting x=0)</li>
+                        <li>\( \beta_1 = \) It is the slope of the regression line, which tells whether the line is increasing or decreasing. </li>
+                        <li>\( \epsilon = \) The error term. (For a good model it will be negligible)</li>
+                      </ul>
+
+                      <p>
+                        Simple Linear regression algorithm has mainly two objectives:
+                      </p>
+
+                      <ul>
+                        <li>Model the relationship between the two variables. Such as the relationship between Income and expenditure, experience and Salary, etc.</li>
+                        <li>Forecasting new observations. Such as Revenue of a company according to the investments in a year, etc.</li>
+                      </ul>
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-sm-12 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Linear Regression Plot</h5>
+                    </div>
+                    <div class="card-body">
+                      <p
+                        >
+                        Use the slider below to build a linear model from a subset of the data with <b>m</b> points. As you can see, the model gives a line as soon as two points are available, and gets more refined and stable as the size of the subset increases.
+                      </p>
+
+                      <div class="form-group mb-0">
+                        <label for="range-slider" class="form-label">Number of points (m):</label>
+                        
+                        <input class="form-range" type="range" min="0" max="400" value="0" id="range-slider" oninput="this.nextElementSibling.value = this.value">
+                        <span id="range-value">0</span>
+                        <!-- <output>0</output> -->
+                      </div>
+
+                      <div id="plot"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Using Simple Linear Regression Model</h5>
+                    </div>
+                    <div class="card-body">
+                      <p
+                        >
+                        The following is the Simple Linear Regression model trained on a small dataset. The model predicts 
+                        Salary by Years of Experience. This model is trained only for demonstration purposes and should not be used
+                        in any real-world case. The performance metrics are as follows:
+                      </p>
+
+                      <ul>
+                        <li>Mean Absolute Error (MAE): 6286.45</li>
+                        <li>Mean Squared Error (MSE): 49830096.86</li>
+                        <li>R² Score: 0.90</li>
+                      </ul>
+
+
+                      <div class="form-group">
+                        <label for="years-of-experience" class="form-label">Enter Years of Experience to predict salary</label>
+                        <input class="form-control" type="number" value="1" id="years-of-experience">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="predicted-salary">Calculated Salary</label>
+                        <input type="text" class="form-control" value="0" id="predicted-salary" disabled="">
+                      </div>
+
+                      <button id="predict-lr" class="btn btn-primary me-2">Predict</button>
+                      <button id="reset-lr" type="reset" class="btn btn-light">Reset</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Dataset used to train the model</h5>
+                    </div>
+                    <div class="card-body table-border-style">
+                      <div class="table-responsive">
+                        <table class="table" id="pc-dt-fetchapi"> </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!-- [ sample-page ] end -->
+              </div>
+              <!-- [ Main Content ] end -->
+            </div>
+          </div>
+          <!-- [ Main Content ] end -->
+          {% include '_partials/footer.html'%}
+
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+          <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+          <script src="{% static 'js/group/simple_lr.js' %}" type="module"></script>
+
+          <script src="{% static 'js/plugins/simple-datatables.js' %}"></script>
+
+          <script>
+            fetch('https://api.npoint.io/bd36c182f2f9b26eafe8')
+            .then((response) => response.json())
+            .then((data) => {
+              if (!data.length) {
+                return;
+              }
+
+              const columnOrder = ['YearsExperience', 'Salary']; //column order
+
+              const formattedData = data.map((item) => columnOrder.map((key) => item[key]));
+
+              let table = new simpleDatatables.DataTable('#pc-dt-fetchapi', 
+              
+              { 
+                perPage: 5,
+                data: {
+                  headings: columnOrder,
+                  data: formattedData,
+                  
+                }
+              });
+            });
+          </script>
+
+{% endblock content %}

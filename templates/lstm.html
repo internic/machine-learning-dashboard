@@ -1,0 +1,130 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Neural Networks</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">Long-Short Term Memory (LSTM) Networks</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Background</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              LST Memory is an advanced recurrent neural network (RNN) design that was developed to better accurately reflect chronological sequences and related brief relationships. Its key characteristics include the internal layout of an LSTM cell, the many changes made to the LSTM architecture, and a few in-demand LSTM implementations.
+                            </p>
+
+                            <p>
+                                LSTM networks extend the recurrent neural network (RNNs) mainly designed to deal with situations in which RNNs do not work. When we talk about RNN, it is an algorithm that processes the current input by taking into account the output of previous events (feedback) and then storing it in the memory of its users for a brief amount of time (short-term memory). Of the many applications, its most well-known ones are those in the areas of non-Markovian speech control and music composition. However, there are some drawbacks to RNNs.
+                            </p>
+
+                            <p>
+                                Long-Short-Term Memory (LSTM) was introduced into the picture as it is the first to fail to save information over long periods. Sometimes an ancestor of data stored a considerable time ago is needed to determine the output of the present. However, RNNs are utterly incapable of managing these "long-term dependencies."
+                            </p>
+
+                            <p>
+                                The second issue is that there is no better control over which component of the context is required to continue and what part of the past must be forgotten. Other issues associated with RNNs are the exploding or disappearing slopes (explained later) that occur in training an RNN through backtracking.
+                            </p>
+
+                            <p>
+                                Therefore, the problem of the gradient disappearing is eliminated almost entirely as the training model is unaffected. Long-time lags within specific issues are solved using LSTMs, which also deal with the effects of noise, distributed representations, or endless numbers.
+                            </p>
+
+                            <p>The design of LSTM (Long-Short Term Memory) networks contrasts with conventional RNNs in a few key perspectives:</p>
+
+                            <h5>Hidden Layer Structure</h5>
+
+                            <p>
+                                The main difference between the structures that comprise RNNs as well as LSTMs can be seen in the fact that the hidden layer of LSTM is the gated unit or cell. It has four layers that work with each other to create the output of the cell, as well as the cell's state. Both of these are transferred to the next layer.
+                            </p>
+
+                            <h5>
+                                Gating Mechanisms
+                            </h5>
+
+                            <p>
+                                Contrary to RNNs, which comprise the sole neural net layer made up of Tanh, LSTMs are comprised of three logistic sigmoid gates and a Tanh layer. Gates were added to restrict the information that goes through cells. They decide which portion of the data is required in the next cell and which parts must be eliminated. The output will typically fall in the range of 0-1, where "0" is a reference to "reject all' while "1" means "include all."
+                            </p>
+
+                            <h5>Hidden layers of LSTM:</h5>
+
+                            <p>
+                                Each LSTM cell is equipped with three inputs and two outputs, ht, and Ct. At a specific time, t, which ht is the hidden state, and Ct is the cell state or memory. It xt is the present information point or the input. The first sigmoid layer contains two inputs: ht-1 and xt, where ht-1 is the state hidden in the cell before it. It is also known by its name and the forget gate since its output is a selection of the amount of data from the last cell that should be included. Its output will be a number [0,1] multiplied (pointwise) by the previous cell's state .
+                            </p>
+
+                        </div>
+                        </div>
+                      </div>
+      
+      
+                      <div class="col-sm-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>LSTM Demonstration</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Below is LSTM network to predict mouse movements - training, prediction and interactive dataset generation. This is just a demo to show how LSM can be used and by no means can accurately predict how the user is going to move the mouse. However it is interesting to note how the predictions tend to follow the direction in which the mouse is moving initially, and also diverge from the boundaries of the drawing area.
+                            </p>
+
+      
+                            <iframe width="100%" height="586" frameborder="0"
+  src="https://observablehq.com/embed/69afcf3858b94d54?cells=view"></iframe>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+{% endblock content %}

@@ -1,0 +1,100 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Classification</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">K-Nearest Neighbor Algorithm</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Background</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              K-Nearest Neighbour is one of the simplest Machine Learning algorithms based on Supervised Learning technique. It assumes the similarity between the new case/data and available cases and put the new case into the category that is most similar to the available categories. 
+                            </p>
+                            
+                            <p>K-NN algorithm stores all the available data and classifies a new data point based on the similarity. This means when new data appears then it can be easily classified into a well suite category by using K-NN algorithm.</p>
+
+                            <p>
+                                K-NN algorithm can be used for Regression as well as for Classification but mostly it is used for the Classification problems. 
+                            </p>
+
+                            <p>It is a non-parametric algorithm, which means it does not make any assumption on underlying data. It is also called a lazy learner algorithm because it does not learn from the training set immediately instead it stores the dataset and at the time of classification, it performs an action on the dataset.</p>
+
+                            <p>KNN algorithm at the training phase just stores the dataset and when it gets new data, then it classifies that data into a category that is much similar to the new data.</p>
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>KNN Visualization</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Below is the visualization of the KNN algorithm. The graph is fully interactive allowing the click, drag functionalities, and showing visualization of the KNN. You can add the dot to the graph and based on selected neighbor dots it will be classified accordingly.
+                            </p>
+      
+                            <iframe width="100%" height="735" frameborder="0"
+  src="https://observablehq.com/embed/76d723d0a89561b5@293?cells=viewof+numTrain%2Cviewof+k%2Cknearest"></iframe>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+{% endblock content %}

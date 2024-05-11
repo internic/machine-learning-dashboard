@@ -1,0 +1,176 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Classification </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">Classification Performance Evaluation</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Confusion Matrix</h5>
+                          </div>
+                          <div class="card-body">
+                            <p>
+                                The confusion matrix is a matrix used to determine the performance of the classification models for a given set of test data. It can only be determined if the true values for test data are known. The matrix itself can be easily understood, but the related terminologies may be confusing. Since it shows the errors in the model performance in the form of a matrix, hence also known as an error matrix. 
+                            </p>
+
+                            <p>
+                                Some features of Confusion matrix are given below:
+                            </p>
+
+                            <ul>
+                                <li>For the 2 prediction classes of classifiers, the matrix is of 2*2 table, for 3 classes, it is 3*3 table, and so on.</li>
+                                <li>The matrix is divided into two dimensions, that are predicted values and actual values along with the total number of predictions.</li>
+                                <li>Predicted values are those values, which are predicted by the model, and actual values are the true values for the given observations.</li>
+                            </ul>
+
+                            <div id="confusion-matrix-plot" class="plot-container"></div>
+
+                            <p>
+                                The above table has the following cases:
+                            </p>
+
+                            <ul>
+                                <li><b>True Negative: </b>Model has given prediction No, and the real or actual value was also No.</li>
+                                <li><b>True Positive: </b>The model has predicted yes, and the actual value was also true.</li>
+                                <li><b>False Negative: </b>The model has predicted no, but the actual value was Yes, it is also called as Type-II error.</li>
+                                <li><b>False Positive: </b>The model has predicted Yes, but the actual value was No. It is also called a Type-I error.</li>
+                            </ul>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Accuracy, Precision, Recall, Specificity, F1 Score</h5>
+                          </div>
+                          <div class="card-body">
+                            <h5>Accuracy</h5>
+                            <p>
+                                It is one of the important parameters to determine the accuracy of the classification problems. It defines how often the model predicts the correct output. It can be calculated as the ratio of the number of correct predictions made by the classifier to all number of predictions made by the classifiers. The formula is given below:
+                            </p>
+
+
+                            <div>
+                                \[
+                                Accuracy = \frac{TP + TN}{TP + FP + FN + TN}
+                                \]
+                              </div>
+
+                              <h5>Precision:</h5>
+
+                              <p>
+                                It can be defined as the number of correct outputs provided by the model or out of all positive classes that have predicted correctly by the model, how many of them were actually true. It can be calculated using the below formula:
+                              </p>
+                              
+                              <div>
+                                \[
+                                Precision = \frac{TP}{TP + FP}
+                                \]
+                              </div>
+
+                              <h5>Recall (Sensitivity)</h5>
+
+                              <p>
+                                It is also similar to the Precision metric; however, it aims to calculate the proportion of actual positive that was identified incorrectly. It can be calculated as True Positive or predictions that are actually true to the total number of positives, either correctly predicted as positive or incorrectly predicted as negative (true Positive and false negative). It is defined as the out of total positive classes, how our model predicted correctly. The recall must be as high as possible.
+                              </p>
+
+                              <div>
+                                \[
+                                Recall = \frac{TP}{TP + FN}
+                                \]
+                              </div>
+
+                              <h5>
+                                F1 Score
+                              </h5>
+
+                              <p>
+                                F-score or F1 Score is a metric to evaluate a binary classification model on the basis of predictions that are made for the positive class. It is calculated with the help of Precision and Recall. It is a type of single score that represents both Precision and Recall. So, the F1 Score can be calculated as the harmonic mean of both precision and Recall, assigning equal weight to each of them. It is maximum when Precision is equal to Recall.
+                              </p>
+
+                              <div>
+                                \[
+                                F1 = 2 * \frac{Precision * Recall}{Precision + Recall}
+                                \]
+                              </div>
+
+                              <h5>
+                                Specificity
+                              </h5>
+
+                              <p>
+                                Specificity is the ratio of true negatives to all negative outcomes. This metric is of interest if you are concerned about the accuracy of your negative rate and there is a high cost to a positive outcome — so you don’t want to blow this whistle if you don’t have to. 
+                              </p>
+
+                              <div>
+                                \[
+                                Specificity = \frac{TN}{TN + FP}
+                                \]
+                              </div>
+
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+                <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+                <script src="{% static 'js/group/classification_performance.js' %}" type="module"></script>
+
+{% endblock content %}

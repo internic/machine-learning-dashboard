@@ -1,0 +1,226 @@
+{% block content %}
+       <nav class="pc-sidebar">
+        <div class="navbar-wrapper">
+          <div class="m-header">
+            <a href="/" class="b-brand">
+              <!-- ========  logo ============ -->
+              <img src="../media/images/logo-dark.svg" alt="" class="logo logo-lg">
+              <img src="../media/images/favicon.svg" alt="" class="logo logo-sm">
+            </a>
+          </div>
+          <div class="tab-container">
+            <div class="tab-sidemenu">
+              <ul class="pc-tab-link nav flex-column" role="tablist" id="pc-layout-submenus">
+                      </ul>
+            </div>
+            <div class="tab-link ">
+              <div class="navbar-content">
+                <div class="tab-content" id="pc-layout-tab">
+                </div>
+
+
+                <ul class="pc-navbar">
+
+                  <li class="pc-item pc-caption">
+                    <label>Regression</label>
+                  </li>
+
+                  <li class="pc-item">
+                    <a href="/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-align-bottom"></i>
+                      </span>
+                      <span class="pc-mtext">Simple Linear Regression</span>
+                    </a>
+                  </li>
+
+                  <li class="pc-item">
+                    <a href="/multiple-regression/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-chart-bar"></i>
+                      </span>
+                      <span class="pc-mtext">Multiple Linear Regression</span>
+                    </a>
+                  </li>
+
+                  <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-chart-line"></i>
+                      </span>
+                      <span class="pc-mtext">Performance Evaluation</span>
+                      <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+                    </a>
+                    <ul class="pc-submenu">
+                      <li class="pc-item"><a class="pc-link" href="/regression-performance/">Mean Absolute Error</a></li>
+                      <li class="pc-item"><a class="pc-link" href="/regression-performance/#mse">Mean Square Error</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="pc-item">
+                    <a href="/overfitting-underfitting/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-chart-line-down"></i>
+                      </span>
+                      <span class="pc-mtext">Underfitting</span>
+                    </a>
+                  </li>
+
+                  <li class="pc-item">
+                    <a href="/overfitting-underfitting/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-chart-line-up"></i>
+                      </span>
+                      <span class="pc-mtext">Overfitting</span>
+                    </a>
+                  </li>
+
+
+
+                  <li class="pc-item pc-caption">
+                    <label>Classification</label>
+                    <i class="ph-duotone ph-chart-scatter"></i>
+                  </li>
+
+                  <li class="pc-item">
+                    <a href="/logistic-regression/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-projector-screen-chart"></i>
+                      </span>
+                      <span class="pc-mtext">Logistic Regression</span>
+                    </a>
+                  </li>
+
+                  <li class="pc-item">
+                    <a href="/knn/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-graph"></i>
+                      </span>
+                      <span class="pc-mtext">K-Nearest Neighbor</span>
+                    </a>
+                  </li>
+                  <li class="pc-item">
+                    <a href="/naive-bayes-classifier/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-database"></i>
+                      </span>
+                      <span class="pc-mtext">Naive Bayes Classifier</span>
+                    </a>
+                  </li>
+                  <li class="pc-item">
+                    <a href="/decision-tree-classifier/" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-tree-structure"></i>
+                      </span>
+                      <span class="pc-mtext">Decision Tree Classifier</span></a
+                    >
+                  </li>
+
+
+                  <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link"
+                      ><span class="pc-micon"> <i class="ph-duotone ph-bounding-box"></i> </span><span class="pc-mtext">Ensemble Methods</span
+                      ><span class="pc-arrow"><i data-feather="chevron-right"></i></span
+                    ></a>
+                    <ul class="pc-submenu">
+
+                      <li class="pc-item pc-hasmenu">
+                        <a href="/ensemble-methods/" class="pc-link"
+                          >Bagging<span class="pc-arrow"><i data-feather="chevron-right"></i></span
+                        ></a>
+                        <ul class="pc-submenu">
+                          <li class="pc-item"><a class="pc-link" href="#!">Random Forest</a></li>
+                        </ul>
+                      </li>
+
+                      <li class="pc-item pc-hasmenu">
+                        <a href="/ensemble-methods/" class="pc-link"
+                          >Boosting<span class="pc-arrow"><i data-feather="chevron-right"></i></span
+                        ></a>
+                        <ul class="pc-submenu">
+                          <li class="pc-item"><a class="pc-link" href="/ensemble-methods/">AdaBoost</a></li>
+                          <li class="pc-item"><a class="pc-link" href="/ensemble-methods/">XGBoost</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link"
+                      ><span class="pc-micon"> <i class="ph-duotone ph-chart-line"></i> </span><span class="pc-mtext">Performance Evaluation</span
+                      ><span class="pc-arrow"><i data-feather="chevron-right"></i></span
+                    ></a>
+
+                    <ul class="pc-submenu">
+                      <li class="pc-item"><a class="pc-link" href="/classification-performance/">Confusion Matrix</a></li>
+                      <li class="pc-item"><a class="pc-link" href="/classification-performance/">Accuracy</a></li>
+                      <li class="pc-item"><a class="pc-link" href="/classification-performance/">Precision</a></li>
+                      <li class="pc-item"><a class="pc-link" href="/classification-performance/">Recall</a></li>
+                      <li class="pc-item"><a class="pc-link" href="/classification-performance/">Specificty</a></li>
+                      <li class="pc-item"><a class="pc-link" href="/classification-performance/">F1 Score</a></li>
+                    </ul>
+
+                  </li>
+
+
+
+
+
+                  <li class="pc-item pc-caption">
+                    <label>Cross Validation</label>
+                    <i class="ph-duotone ph-shuffle-simple"></i>
+                  </li>
+
+
+                  <li class="pc-item">
+                    <a href="/k-fold/" class="pc-link">
+                      <span class="pc-micon"> <i class="ph-duotone ph-map-trifold"></i> </span><span class="pc-mtext">K-Fold Cross Validation</span></a
+                    >
+                  </li>
+                  <li class="pc-item">
+                    <a href="/loo-cv/" class="pc-link">
+                      <span class="pc-micon"> <i class="ph-duotone ph-notification"></i> </span><span class="pc-mtext">Leave One Out Cross Validation</span></a
+                    >
+                  </li>
+
+                  
+                  <li class="pc-item pc-caption">
+                    <label>Neural Networks</label>
+                    <i class="ph-duotone ph-line-segments"></i>
+                  </li>
+
+                  <li class="pc-item">
+                    <a href="/basic-neuralnet/" class="pc-link">
+                      <span class="pc-micon"> <i class="ph-duotone ph-git-merge"></i> </span><span class="pc-mtext">Basic Neural Network</span></a
+                    >
+                  </li>
+
+                  <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                      <span class="pc-micon">
+                        <i class="ph-duotone ph-git-diff"></i>
+                      </span>
+                      <span class="pc-mtext">Recurrent Neural Network</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span
+                    ></a>
+                    <ul class="pc-submenu">
+                      <li class="pc-item"><a class="pc-link" href="/lstm/">Long Short-Term Memory</a></li>
+                    </ul>
+                  </li>
+
+
+
+                  <li class="pc-item">
+                    <a href="/cnn/" class="pc-link">
+                      <span class="pc-micon"> <i class="ph-duotone ph-grid-four"></i> </span><span class="pc-mtext">Convolutional Neural Network</span></a
+                    >
+                  </li>
+
+      
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+{% endblock content %}

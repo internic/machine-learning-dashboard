@@ -1,0 +1,209 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Linear Regression</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">Multiple Linear Regression</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Background</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Multiple Linear Regression is one of the important regression algorithms which models the linear relationship between a single dependent continuous variable and more than one independent variable.
+                            </p>
+
+                            <p>
+                              It is an extension of Simple Linear regression as it takes more than one predictor variable to predict the response variable.
+                            </p>
+
+                            <div>
+                              \[
+                              \hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p
+                              \]
+
+                            </div>
+
+                            <h5>Some key points about MLR:</h5>
+
+                            <ul>
+                              <li>For MLR, the dependent or target variable(Y) must be the continuous/real, but the predictor or independent variable may be of continuous or categorical form.</li>
+                              <li>Each feature variable must model the linear relationship with the dependent variable.</li>
+                              <li>MLR tries to fit a regression line through a multidimensional space of data-points.</li>
+                            </ul>
+
+                            <h5>Assumptions for Multiple Linear Regression:</h5>
+
+                            <ul>
+                              <li>A linear relationship should exist between the Target and predictor variables.</li>
+                              <li>The regression residuals must be normally distributed.</li>
+                              <li>MLR assumes little or no multicollinearity (correlation between the independent variable) in data.</li>
+                            </ul>
+
+
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Multiple Linear Regression Plot</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Below is the visualization of the Multiple Linear Regression for the three variable dataset. The graph shows the linear relationship between Age, Experiance, and Income.
+                            </p>
+      
+                            <div id="plot"></div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Using Multiple Linear Regression Model</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              The following is the Multiple Linear Regression model trained on a small dataset. The model predicts 
+                              Income by Age and Years of Experience. This model is trained only for demonstration purposes and should not be used
+                              in any real-world case. The performance metrics are as follows:
+                            </p>
+      
+                            <ul>
+                              <li>Mean Absolute Error (MAE): 797.91</li>
+                              <li>Mean Squared Error (MSE): 753796.77</li>
+                              <li>R² Score: 0.94</li>
+                            </ul>
+      
+                            <div class="form-group">
+                              <label for="age" class="form-label">Enter Age</label>
+                              <input class="form-control" type="number" value="1" id="age">
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="years-of-experience" class="form-label">Enter Years of Experience</label>
+                              <input class="form-control" type="number" value="1" id="years-of-experience">
+                            </div>
+                          
+                            <div class="form-group">
+                              <label class="form-label" for="predicted-income">Calculated Income</label>
+                              <input type="text" class="form-control" value="0" id="predicted-income" disabled="">
+                            </div>
+                          
+                            <button id="predict-mlr" class="btn btn-primary me-2">Predict</button>
+                            <button id="reset-mlr" type="reset" class="btn btn-light">Reset</button>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Dataset used to train the model</h5>
+                          </div>
+                          <div class="card-body table-border-style">
+                            <div class="table-responsive">
+                              <table class="table" id="pc-dt-fetchapi"> </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+      
+      
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+                <!-- Import Plotly -->
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+                <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+                <script src="{% static 'js/group/multiple_lr.js' %}" type="module"></script>
+      
+                <script src="{% static 'js/plugins/simple-datatables.js' %}"></script>
+      
+                <script>
+                  fetch('https://api.npoint.io/8c8763e46e1b8a7c16c5')
+                  .then((response) => response.json())
+                  .then((data) => {
+                    if (!data.length) {
+                      return;
+                    }
+      
+                    const columnOrder = ['age', 'experience', 'income']; //column order
+      
+                    const formattedData = data.map((item) => columnOrder.map((key) => item[key]));
+      
+                    let table = new simpleDatatables.DataTable('#pc-dt-fetchapi', 
+                    
+                    { 
+                      perPage: 7,
+                      data: {
+                        headings: columnOrder,
+                        data: formattedData,
+                        
+                      }
+                    });
+                  });
+                </script>
+
+
+{% endblock content %}

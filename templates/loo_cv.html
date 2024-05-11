@@ -1,0 +1,104 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Cross Validation</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">Leave One Out Cross Validation</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Background</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Cross-validation, or k-fold cross-validation, is a procedure used to estimate the performance of a machine learning algorithm when making predictions on data not used during the training of the model.
+                            </p>
+
+                            <p>
+                                The cross-validation has a single hyperparameter “k” that controls the number of subsets that a dataset is split into. Once split, each subset is given the opportunity to be used as a test set while all other subsets together are used as a training dataset.
+                            </p>
+
+                            <p>
+                                This means that k-fold cross-validation involves fitting and evaluating k models. This, in turn, provides k estimates of a model’s performance on the dataset, which can be reported using summary statistics such as the mean and standard deviation. This score can then be used to compare and ultimately select a model and configuration to use as the “final model” for a dataset.
+                            </p>
+
+                            <p>
+                                Typical values for k are k=3, k=5, and k=10, with 10 representing the most common value. This is because, given extensive testing, 10-fold cross-validation provides a good balance of low computational cost and low bias in the estimate of model performance as compared to other k values and a single train-test split.
+                            </p>
+
+                            <h5>Leave-one-out cross-validation</h5>
+
+                            <p>
+                                Leave-one-out cross-validation, or LOOCV, is a configuration of k-fold cross-validation where k is set to the number of examples in the dataset.
+                            </p>
+
+                            <p>
+                                LOOCV is an extreme version of k-fold cross-validation that has the maximum computational cost. It requires one model to be created and evaluated for each example in the training dataset.
+                            </p>
+
+                            <p>
+                                The benefit of so many fit and evaluated models is a more robust estimate of model performance as each row of data is given an opportunity to represent the entirety of the test dataset.
+                            </p>
+
+                            <p>
+                                Given the computational cost, LOOCV is not appropriate for very large datasets such as more than tens or hundreds of thousands of examples, or for models that are costly to fit, such as neural networks.
+                            </p>
+
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+{% endblock content %}

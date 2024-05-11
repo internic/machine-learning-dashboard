@@ -1,0 +1,215 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Classification</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">Ensemble Methods</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Bagging</h5>
+                          </div>
+                          <div class="card-body">
+                            <p>
+                                Ensemble methods combine different decision trees to deliver better predictive results, afterward utilizing a single decision tree. The primary principle behind the ensemble model is that a group of weak learners come together to form an active learner.
+                            </p>
+                      
+
+                            <p>
+                                Bagging is used when our objective is to reduce the variance of a decision tree. Here the concept is to create a few subsets of data from the training sample, which is chosen randomly with replacement. Now each collection of subset data is used to prepare their decision trees thus, we end up with an ensemble of various models. The average of all the assumptions from numerous tress is used, which is more powerful than a single decision tree.
+                            </p>
+
+                            <p>
+                                Random Forest is an expansion over bagging. It takes one additional step to predict a random subset of data. It also makes the random selection of features rather than using all features to develop trees. When we have numerous random trees, it is called the Random Forest.
+                            </p>
+
+                            <p>
+                                These are the following steps which are taken to implement a Random forest:
+                            </p>
+
+                            <ul>
+                                <li>Let us consider X observations Y features in the training data set. First, a model from the training data set is taken randomly with substitution.</li>
+                                <li>The tree is developed to the largest.</li>
+                                <li>The given steps are repeated, and prediction is given, which is based on the collection of predictions from n number of trees.</li>
+                            </ul>
+                            
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Boosting</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Boosting is another ensemble procedure to make a collection of predictors. In other words, we fit consecutive trees, usually random samples, and at each step, the objective is to solve net error from the prior trees.
+                            </p>
+
+                            <p>
+                                If a given input is misclassified by theory, then its weight is increased so that the upcoming hypothesis is more likely to classify it correctly by consolidating the entire set at last converts weak learners into better performing models.
+                            </p>
+
+                            <p>
+                                Gradient Boosting is an expansion of the boosting procedure.
+                            </p>
+
+                            <p>
+                                Gradient Boosting = Gradient Descent + Boosting  
+                            </p>
+
+                            <p>
+                                It utilizes a gradient descent algorithm that can optimize any differentiable loss function. An ensemble of trees is constructed individually, and individual trees are summed successively. The next tree tries to restore the loss ( It is the difference between actual and predicted values).
+                            </p>
+
+                            <p>
+                                Advantages of using Gradient Boosting methods:
+                            </p>
+
+                            <ul>
+                                <li>It supports different loss functions.</li>
+                                <li>It works well with interactions.</li>
+                            </ul>
+
+                            <p>
+                                Disadvantages of using a Gradient Boosting methods:
+                            </p>
+
+                            <ul>
+                                <li>It requires cautious tuning of different hyper-parameters.</li>                             
+                            </ul>
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Adaboost</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              AdaBoost, short for Adaptive Boosting, is a powerful ensemble learning algorithm that could decorate the overall Performance of susceptible, inexperienced persons and create a sturdy classifier.
+                            </p>
+
+                            <p>
+                                To understand how AdaBoost works, smash down its working mechanism right into a step-by-step process:
+                            </p>
+
+                            <ol>
+                                <li><b>Weight Initialization. </b>At the start, every schooling instance is assigned an identical weight. These weights determine the importance of every example in the getting-to-know method.</li>
+                                <li><b>Model Training. </b>A weak learner is skilled at the dataset, with the aim of minimizing class errors. A weak learner is usually an easy model, which includes a selection stump (a one-stage decision tree) or a small neural network.</li>
+                                <li><b>Weighted Error Calculation. </b>After the vulnerable learner is skilled, its miles are used to make predictions at the education dataset. The weighted mistakes are then calculated by means of summing up the weights of the misclassified times. This step emphasizes the importance of the samples which are tough to classify.</li>
+                                <li><b>Model Weight Calculation. </b>The weight of the susceptible learner is calculated primarily based on their Performance in classifying the training data. Models that perform properly are assigned higher weights, indicating that they're more reliable.</li>
+                                <li><b>Update Instance Weights. </b>The example weights are updated to offer more weight to the misclassified samples from the previous step. This adjustment focuses on the studying method at the times that the present-day model struggles with.</li>
+                                <li><b>Repeat. </b>Steps 2 through five are repeated for a predefined variety of iterations or till a distinctive overall performance threshold is met.</li>
+                                <li><b>Final Model Creation. </b>The very last sturdy model (also referred to as the ensemble) is created by means of combining the weighted outputs of all weak newcomers. Typically, the fashions with better weights have an extra influence on the final choice.</li>
+                                <li><b>Classification. </b>To make predictions on new records, AdaBoost uses the very last ensemble model. Each vulnerable learner contributes its prediction, weighted with the aid of its significance, and the blended result is used to categorize the enter.</li>
+                            </ol>
+
+
+
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>XGBoost</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Gradient boosted decision trees are implemented by the XGBoost library of Python, intended for speed and execution, which is the most important aspect of ML (machine learning).
+                            </p>
+
+                            <p>
+                                XgBoost (Extreme Gradient Boosting) library of Python was introduced at the University of Washington by scholars. It is a module of Python written in C++, which helps ML model algorithms by the training for Gradient Boosting.
+                            </p>
+
+                            <p>
+                                <b>Gradient boosting:</b> This is an AI method utilized in classification and regression assignments, among others. It gives an expectation model as a troupe of feeble forecast models, commonly called decision trees.
+                            </p>
+
+                            <h5>
+                                How does Fundamental Gradient Boosting function?
+                            </h5>
+
+                            <ul>
+                                <li>A loss function should be improved, which implies bringing down the loss function better than the result.</li>
+                                <li>To make expectations, weak learners are used in the model</li>
+                                <li>Decision trees are utilized in this, and they are utilized in a jealous way, which alludes to picking the best-divided focuses in light of Gini Impurity and so forth or to limit the loss function</li>
+                                <li>The additive model is utilized to gather every one of the frail models, limiting the loss function.</li>
+                                <li>Trees are added each, ensuring existing trees are not changed in the decision tree. Regularly angle plummet process is utilized to find the best hyper boundaries, post which loads are refreshed further.</li>
+                            </ul>
+
+                            <p>
+                                XGBoost can give improved arrangements than other ML model algorithms. As a matter of fact, since its initiation, it has turned into the "best in class" ML model algorithm to manage organized information.
+                            </p>
+
+
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+{% endblock content %}

@@ -1,0 +1,148 @@
+{% extends '_partials/base.html' %} {% block content %}
+
+{% load static %}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+
+      <!-- [ Sidebar Menu ] start -->
+      {% include '_partials/sidebar.html'%}
+      <!-- [ Sidebar Menu ] end -->
+
+       <!-- [ Header Topbar ] start -->
+       {% include '_partials/header.html'%}
+      <!-- [ Header ] end -->
+
+                <!-- [ Main Content ] start -->
+                <div class="pc-container">
+                  <div class="pc-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                      <div class="page-block">
+                        <div class="row align-items-center">
+                          <div class="col-md-12">
+                            <ul class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="../dashboard/index.html">Homee</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0)">Layout</a></li> -->
+                              
+                              <li class="breadcrumb-item" aria-current="page">Linear Regression</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="page-header-title">
+                              <h2 class="mb-0">Performance Evaluation for Linear Regression</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+            
+            
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                      <!-- [ sample-page ] start -->
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>MAE, MSE, R Squared</h5>
+                          </div>
+                          <div class="card-body">
+
+                            <h5>Mean Absolute Error (MAE)</h5>
+                            <p
+                              >Mean Absolute Error or MAE is one of the simplest metrics, which measures the absolute difference between actual and predicted values, where absolute means taking a number as Positive.
+                            </p>
+
+                            <p>
+                              To understand MAE, let's take an example of Linear Regression, where the model draws a best fit line between dependent and independent variables. To measure the MAE or error in prediction, we need to calculate the difference between actual values and predicted values. But in order to find the absolute error for the complete dataset, we need to find the mean absolute of the complete dataset.
+                            </p>
+
+                            <div>
+                              \[
+                              \text{MAE} = \frac{1}{n} \sum_{i=1}^n |y_i - \hat{y}_i|
+                              \]
+
+                            </div>
+
+                            <h5>Mean Squared Error (MSE)</h5>
+
+                            <p>
+                              It measures the average of the Squared difference between predicted values and the actual value given by the model.
+                            </p>
+
+                            <p>
+                              Since in MSE, errors are squared, therefore it only assumes non-negative values, and it is usually positive and non-zero.
+                            </p>
+
+                            <p>
+                              Moreover, due to squared differences, it penalizes small errors also, and hence it leads to over-estimation of how bad the model is. MSE is a much-preferred metric compared to other regression metrics as it is differentiable and hence optimized better.
+                            </p>
+
+                            <div>
+                              \[
+                              \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+                              \]
+
+                            </div>
+
+                            <h5>
+                              R Squared Score
+                            </h5>
+
+                            <p>
+                              R squared error is also known as Coefficient of Determination, which is another popular metric used for Regression model evaluation. The R-squared metric enables us to compare our model with a constant baseline to determine the performance of the model. To select the constant baseline, we need to take the mean of the data and draw the line at the mean.
+                            </p>
+
+                            <p>
+                              The R squared score will always be less than or equal to 1 without concerning if the values are too large or small.
+                            </p>
+
+                            <div>
+                              \[
+                              R^2 = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}
+                              \]
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Linear Regression Visualization</h5>
+                          </div>
+                          <div class="card-body">
+                            <p
+                              >
+                              Below is the visualization of the Linear Regression and evaluation metrics. The interactive graphs provides click, drag options to get useful insights about linear regression performance evaluations.
+                            </p>
+      
+                            <iframe width="100%" height="550" frameborder="0"
+  src="https://observablehq.com/embed/5d49ae73b79d9300?cells=resetButton%2CviewOptions%2CrSquaredPlot%2CregressionPlot"></iframe>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- [ sample-page ] end -->
+                    </div>
+                    <!-- [ Main Content ] end -->
+                  </div>
+                </div>
+                <!-- [ Main Content ] end -->
+                {% include '_partials/footer.html'%}
+
+                <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+{% endblock content %}
